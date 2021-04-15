@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+
+body{
+  font-family: 'Contrail One', cursive;
+}
+
+.brand-color{
+  color: #f98b60;
+}
+.btn-brand {
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 60px;  
+  transition-duration: 0.5s;
+  color: #f98b60;
+
+}
+
+.btn-brand:hover {
+  background-color: #f98b6000;
+  color: white;
+  border: 3px solid white;
+}
+
+.btn-brand-white {
+  padding: 10px 20px 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 60px;  
+  transition-duration: 0.5s;
+  background-color: #f98b60;
+  font-style: uppercase;
+
+}
+
+.btn-brand-white:hover {
+  background-color: #f98b6000;; /* Green */
+  color: #f98b60;
+  border: 3px solid #f98b60;
+}
