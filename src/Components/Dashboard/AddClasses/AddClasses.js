@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavbarLogin from '../../Shared/NavbarLogin/NavbarLogin';
 import Sidebar from '../Sidebar/Sidebar';
 import { useForm } from "react-hook-form";
@@ -7,17 +7,37 @@ import axios from 'axios';
 
 const AddClasses = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const [imageURL, setIMageURL] = useState(null);
+
+    const onSubmit = data => {
+        const eventData = {
+            class : data.classTitle,
+            details: data.courseDetails,
+            fee: data.courseFee,
+            imageURL: imageURL
+        };
+        const url = `http://localhost:5055/addClasses`
+        console.log(eventData)
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(eventData)
+        })
+        .then(res => console.log('server side response', res))
+    };
 
     const handleImageUpload = event => {
         console.log(event.target.files[0])
         const imageData = new FormData();
-        imageData.set('key', '34f621294efe3dffee17d7d85e366504');
+        imageData.set('key', '4aeaf0a1b0521a6708c034d03b82fdb8');
         imageData.append('image', event.target.files[0])   
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
-                // setIMageURL(response.data.data.display_url);
+                setIMageURL(response.data.data.display_url);
                 console.log(response.data.data.display_url)
             })
             .catch(function (error) {
@@ -40,19 +60,20 @@ const AddClasses = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group row">
                             <div className="col-6">
-                            <input type="text" placeholder="Class Title" {...register("Class Title", { required: true, maxLength: 80 })} className="form-control"/>
-                            {errors.text && <p><span className="text-danger">This field is required</span></p>}
+                            <input type="text" placeholder="Class Title" {...register("classTitle", { required: true, maxLength: 80 })} className="form-control"/>
+                            {errors.classTitle && <span className="text-danger">This field is required</span>}
                             <br/>
-                            <textarea placeholder="Course Details" {...register("Class Description ", { required: true, maxLength: 100 })} className="form-control"/>
-                           
+                            <textarea placeholder="Course Details" {...register("courseDetails", { required: true, maxLength: 200 })} className="form-control"/>
+                            {errors.courseDetails && <span className="text-danger">This field is required</span>}
                         </div>
 
                         <div className="col-6">
 
-                            <input type="number" placeholder="Course Fee" {...register("Course Fee", { required: true })} className="form-control"/>
-                            {errors.number && <span className="text-danger">This field is required</span>}
+                            <input type="number" placeholder="Course Fee" {...register("courseFee", { required: true, maxLength: 4  })} className="form-control"/>
+                            {errors.courseFee && <span className="text-danger">This field is required</span>}
                             <br/>
-                            <input type="file" placeholder="Course Photo" onChange={handleImageUpload} {...register("Course Photo", { required: true, maxLength: 12 })} />
+                            <input type="file" placeholder="Course Photo" onChange={handleImageUpload}/>
+
                         </div>
                         
                         <div className="form-group text-right">
