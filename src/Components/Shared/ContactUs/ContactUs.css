@@ -1,0 +1,25 @@
+.contact-container{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container img {
+    max-width: 100%;
+}
+
+li {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+small{
+    padding-left: 20px;
+}
+
+@media (max-width: 780px) {
+    .contact-container {
+       height: 550px;
+    }
+}

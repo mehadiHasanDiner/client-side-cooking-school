@@ -14,7 +14,7 @@ const HeaderMain = () => {
                 <img src={hat} alt="" className="img-fluid mb-3"/>
                 <h1>The Art of Cooking</h1>
                 <p className="mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore eveniet necessitatibus et iusto corrupti minima.</p>
-                <button className ="btn-brand"> Learn More</button>
+                <button className ="btn-brand text-uppercase"> Learn More</button>
             </div>
             </div>
         </main>

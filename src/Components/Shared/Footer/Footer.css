@@ -1,0 +1,27 @@
+.footer-container{
+    height: 50px;
+    background-color: #312a24;
+    color: white;
+}
+
+
+.footer-container a {
+    color: white;
+}
+
+
+@media (max-width: 780px) {
+    .footer-container {
+       height: 100px;  
+       display: block;
+    }
+}
+
+
+@media (max-width: 780px) {
+    .footer-container div{
+        padding-top: 2px;
+        justify-content:center !important;
+        align-items: center !important;
+    }
+}

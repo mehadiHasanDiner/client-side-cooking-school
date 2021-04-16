@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar} from 'react-bootstrap';
 
-import logo from '../../../../image/logo.png'
+import logo from '../../../image/logo.png'
 import { Link } from 'react-router-dom';
 
 const NavbarMenu = () => {
@@ -18,7 +18,7 @@ const NavbarMenu = () => {
                     <Nav className="mr-auto"></Nav>
                     <Nav>
                         <Link className="nav-link text-dark" to ="/home"> Home</Link>
-                        <Link className="nav-link text-dark" to ="/admin"> Admin</Link>
+                        <Link className="nav-link text-dark" to ="/dashboard"> Admin</Link>
                         <Link className="nav-link text-dark" to ="/orderPreviewPass"> Order</Link>
                         
                     </Nav>
