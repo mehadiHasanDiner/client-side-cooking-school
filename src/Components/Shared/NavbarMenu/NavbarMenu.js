@@ -18,6 +18,7 @@ const NavbarMenu = () => {
                     <Nav className="mr-auto"></Nav>
                     <Nav>
                         <Link className="nav-link text-dark" to ="/home"> Home</Link>
+                        <Link className="nav-link text-dark" to ="/useDashboard"> User</Link>
                         <Link className="nav-link text-dark" to ="/dashboard"> Admin</Link>
                         <Link className="nav-link text-dark" to ="/orderPreviewPass"> Order</Link>
                         

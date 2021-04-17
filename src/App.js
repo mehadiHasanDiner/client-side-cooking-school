@@ -13,6 +13,7 @@ import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import AddClasses from './Components/Dashboard/AddClasses/AddClasses';
 import UserDashboard from './Components/UserDashboard/UserDashboard/UserDashboard';
 import PaymentForm from './Components/UserDashboard/ProcessPayment/PaymentForm';
+import UserReview from './Components/UserDashboard/UserReview/UserReview';
 
 export const UserContext = createContext();
 
@@ -35,6 +36,12 @@ function App() {
             <UserDashboard></UserDashboard>
           </PrivateRoute>
           <PrivateRoute path="/user/paymentForm">
+            <PaymentForm></PaymentForm>
+          </PrivateRoute>
+          <PrivateRoute path="/user/useReview">
+            <UserReview></UserReview>
+          </PrivateRoute>
+          <PrivateRoute path="/user/paymentForm/:id">
             <PaymentForm></PaymentForm>
           </PrivateRoute>
           <PrivateRoute path="/admin/addClasses">

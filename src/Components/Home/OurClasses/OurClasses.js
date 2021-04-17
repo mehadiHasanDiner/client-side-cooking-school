@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 
 const OurClasses = () => {
     const [classes, setNewClasses] = useState([]);
     const [visibleClasses, setVisibleClasses] = useState(3);
+
+    const history = useHistory();
+    const handleEnrollNow = (_id) => {
+        history.push(`/user/paymentForm/${_id}`)
+    }
 
     const showMoreItems = () => {
         setVisibleClasses(preValue => preValue + 3);
@@ -21,7 +27,7 @@ const OurClasses = () => {
             <div className="row container">
                 {
                     classes.slice(0, visibleClasses).map(course =>
-                        <div key={course._id} className="col-md-4 col-sm-6">
+                        <div className="col-md-4 col-sm-6">
                             <div className="card mt-4">
                                 <img className="card-img-top" style={{ height: "200px" }} src={course.imageURL} alt="" fluid />
                                 <div className="card-body text-left">
@@ -30,7 +36,7 @@ const OurClasses = () => {
                                     <hr />
                                     <div className="d-flex justify-content-between">
                                         <h3>${course.fee}</h3>
-                                        <button className="btn-brand-white">Enroll</button>
+                                        <button onClick={() => handleEnrollNow(course._id)} className="btn-brand-white">Enroll Now</button>
                                     </div>
                                 </div>
                             </div>

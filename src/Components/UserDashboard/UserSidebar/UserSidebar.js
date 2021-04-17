@@ -16,12 +16,12 @@ const UserSidebar = () => {
                         </Link>
                     </li>
                         <li>
-                            <Link to="/dashboard/listOfClasses" className="brand-color">
+                            <Link to="/user/paymentForm" className="brand-color">
                                 <FontAwesomeIcon icon={faListAlt} /> <span>Booking List</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/admin/addClasses" className="brand-color">
+                            <Link to="/user/useReview" className="brand-color">
                                 <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
                             </Link>
                         </li>
