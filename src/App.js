@@ -11,6 +11,8 @@ import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import AddClasses from './Components/Dashboard/AddClasses/AddClasses';
+import UserDashboard from './Components/UserDashboard/UserDashboard/UserDashboard';
+import PaymentForm from './Components/UserDashboard/ProcessPayment/PaymentForm';
 
 export const UserContext = createContext();
 
@@ -28,6 +30,12 @@ function App() {
           </Route>
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/useDashboard">
+            <UserDashboard></UserDashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/user/paymentForm">
+            <PaymentForm></PaymentForm>
           </PrivateRoute>
           <PrivateRoute path="/admin/addClasses">
             <AddClasses></AddClasses>

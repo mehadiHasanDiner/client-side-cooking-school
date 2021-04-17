@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import OurClasses from '../OurClasses/OurClasses';
 import WantToChef from '../promoForChef/promoForChef';
 import FooterCombined from '../../Shared/FooterCombined/FooterCombined';
+import './Home.css'
 
 const Home = () => {
     return (

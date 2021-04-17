@@ -47,7 +47,10 @@ const AddClasses = () => {
     }
 
     // console.log(errors);
-
+    const handleSaveProduct =() =>{
+        alert("New Class Added Successfully");
+        window.location.reload(true)        
+    }
 
     return (
         <div>
@@ -77,7 +80,7 @@ const AddClasses = () => {
                         </div>
                         
                         <div className="form-group text-right">
-                        <button type="submit" className="btn-brand-white mt-3 ml-3">Add Class</button>
+                        <button onClick = {handleSaveProduct} type="submit" className="btn-brand-white mt-3 ml-3">Add Class</button>
                         </div>
                         </div>
                     </form>
