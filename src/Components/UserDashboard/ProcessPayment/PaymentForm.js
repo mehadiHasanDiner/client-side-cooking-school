@@ -12,7 +12,7 @@ const PaymentForm = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5055/classes/${id}`)
+        fetch(`https://agile-gorge-02356.herokuapp.com/classes/${id}`)
         .then(res => res.json())
         .then(data => setNewClasses(data))
     }, [])

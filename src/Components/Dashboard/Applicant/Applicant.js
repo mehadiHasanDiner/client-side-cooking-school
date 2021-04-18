@@ -7,7 +7,7 @@ const Applicant = () => {
     const [allApplicant, setAllApplicant] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/receiveApply')
+        fetch('https://agile-gorge-02356.herokuapp.com/receiveApply')
             .then(res => res.json())
             .then(data => setAllApplicant(data))
     }, [])

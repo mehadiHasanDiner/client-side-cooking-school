@@ -4,7 +4,7 @@ const ProfessionalChefs = () => {
     const [newAdmin, setNewAdmin] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/newAdmin')
+        fetch('https://agile-gorge-02356.herokuapp.com/newAdmin')
             .then(res => res.json())
             .then(data => setNewAdmin(data))
     }, [])

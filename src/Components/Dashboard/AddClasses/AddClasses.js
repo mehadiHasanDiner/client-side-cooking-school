@@ -16,7 +16,7 @@ const AddClasses = () => {
             fee: data.courseFee,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addClasses`
+        const url = `https://agile-gorge-02356.herokuapp.com/addClasses`
         console.log(eventData)
 
         fetch(url, {

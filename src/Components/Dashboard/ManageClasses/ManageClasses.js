@@ -8,7 +8,7 @@ const ManageClasses = () => {
     const [allClasses, setAllClasses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/classes')
+        fetch('https://agile-gorge-02356.herokuapp.com/classes')
             .then(res => res.json())
             .then(data => setAllClasses(data))
     }, [])
@@ -19,7 +19,7 @@ const ManageClasses = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5055/deleteClass/${id}`, {
+        fetch(`https://agile-gorge-02356.herokuapp.com/deleteClass/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

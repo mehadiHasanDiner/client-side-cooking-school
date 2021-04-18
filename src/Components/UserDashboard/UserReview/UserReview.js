@@ -17,7 +17,7 @@ const UserReview = () => {
             displayName: loggedInUser.name,
             photoURL: loggedInUser.photo,
         }
-        fetch('http://localhost:5055/userReview', {
+        fetch('https://agile-gorge-02356.herokuapp.com/userReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

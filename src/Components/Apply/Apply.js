@@ -15,7 +15,7 @@ const Apply = () => {
             yourEdu: data.yourEdu,
             yourMessage: data.yourMessage,
         };
-        const url = `http://localhost:5055/sendApply`
+        const url = `https://agile-gorge-02356.herokuapp.com/sendApply`
         console.log(eventData)
 
         fetch(url, {

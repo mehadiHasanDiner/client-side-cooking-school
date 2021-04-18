@@ -7,7 +7,7 @@ const ListOfClasses = () => {
     const [allClasses, setAllClasses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/classes')
+        fetch('https://agile-gorge-02356.herokuapp.com/classes')
             .then(res => res.json())
             .then(data => setAllClasses(data))
     }, [])
@@ -15,7 +15,8 @@ const ListOfClasses = () => {
     return (
         <div>
             <NavbarLogin></NavbarLogin>
-            <div className="container-fluid row " >
+            <div className="contai
+            ner-fluid row " >
                 <Sidebar></Sidebar>
                 <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "rgb(255 252 231)" }}>
                     <h5 className="text-brand">List of All Cooking Classes</h5>

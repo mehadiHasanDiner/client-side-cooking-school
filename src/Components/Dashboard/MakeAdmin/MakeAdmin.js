@@ -19,7 +19,7 @@ const MakeAdmin = () => {
             adminQualify: data.adminQualify,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/newAdmin`
+        const url = `https://agile-gorge-02356.herokuapp.com/newAdmin`
         console.log(eventData)
 
         fetch(url, {

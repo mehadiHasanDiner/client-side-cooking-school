@@ -15,7 +15,7 @@ const OurClasses = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5055/classes')
+        fetch('https://agile-gorge-02356.herokuapp.com/classes')
             .then(res => res.json())
             .then(data => setNewClasses(data))
     }, [])
