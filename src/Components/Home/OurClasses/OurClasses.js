@@ -27,7 +27,7 @@ const OurClasses = () => {
             <div className="row container">
                 {
                     classes.slice(0, visibleClasses).map(course =>
-                        <div className="col-md-4 col-sm-6">
+                        <div key = {course._id} className="col-md-4 col-sm-6">
                             <div className="card mt-4">
                                 <img className="card-img-top" style={{ height: "200px" }} src={course.imageURL} alt="" fluid />
                                 <div className="card-body text-left">

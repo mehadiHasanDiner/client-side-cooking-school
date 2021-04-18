@@ -33,7 +33,7 @@ const NavbarLogin = () => {
     return (
         <section style={{background:'#faf6f1', height:"30px"}}>
             <Navbar className ="container" style={{height:"30px"}}>
-            <Navbar.Text> <small>We are open every day from 9 a.m. till 7 p.m.</small> </Navbar.Text>
+            <Navbar.Text> <Link to = "/"> <small> Cooking School </small> </Link> </Navbar.Text>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>

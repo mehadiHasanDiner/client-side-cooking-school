@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './promo-container.css';
 
 const promoForChef = () => {
@@ -12,7 +13,7 @@ const promoForChef = () => {
                     </div>
                 </div>
                 <div className="col-md-4 d-flex align-items-center justify-content-start">
-                    <button className="btn-brand-white text-uppercase">Send Request</button>
+                <Link to ="/sendApply"> <button className="btn-brand-white text-uppercase">  Send Request  </button> </Link>
                 </div>
             </div>
         </section>

@@ -5,18 +5,21 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 
-const AddClasses = () => {
+const MakeAdmin = () => {
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [imageURL, setIMageURL] = useState(null);
 
+
     const onSubmit = data => {
         const eventData = {
-            class : data.classTitle,
-            details: data.courseDetails,
-            fee: data.courseFee,
+            adminName : data.adminName,
+            adminEmail : data.adminEmail,
+            adminTitle: data.adminTitle,
+            adminQualify: data.adminQualify,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addClasses`
+        const url = `http://localhost:5055/newAdmin`
         console.log(eventData)
 
         fetch(url, {
@@ -46,10 +49,9 @@ const AddClasses = () => {
 
     }
 
-    // console.log(errors);
-    const handleSaveProduct =() =>{
-        alert("New Class Added Successfully");
-    }
+    // const handleAddAdmin =() =>{
+    //     alert("Admin Create Successfully");
+    // }
 
     return (
         <div>
@@ -57,29 +59,32 @@ const AddClasses = () => {
             <div className="container-fluid row " >
                 <Sidebar></Sidebar>
                 <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "rgb(255 252 231)" }}>
-                    <h5 className="text-brand">Add a New Class</h5>
+                    <h5 className="text-brand">Create New Admin</h5>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group row">
                             <div className="col-6">
-                            <input type="text" placeholder="Class Title" {...register("classTitle", { required: true, maxLength: 80 })} className="form-control"/>
-                            {errors.classTitle && <span className="text-danger">This field is required</span>}
+                            <input type="text" placeholder="Admin Name" {...register("adminName", { required: true, maxLength: 80 })} className="form-control"/>
+                            {errors.adminName && <span className="text-danger">This field is required</span>}
                             <br/>
-                            <textarea placeholder="Course Details" {...register("courseDetails", { required: true, maxLength: 200 })} className="form-control"/>
-                            {errors.courseDetails && <span className="text-danger">This field is required</span>}
+                            <input type="email" placeholder="Admin Email" {...register("adminEmail", { required: true })} className="form-control"/>
+                            {errors.adminEmail && <span className="text-danger">This field is required</span>}
+                            <br/>
+                            <textarea placeholder="Admin Qualification" {...register("adminQualify", { required: true })} className="form-control"/>
+                            {errors.adminQualify && <span className="text-danger">This field is required</span>}
                         </div>
 
                         <div className="col-6">
 
-                            <input type="number" placeholder="Course Fee" {...register("courseFee", { required: true, maxLength: 4  })} className="form-control"/>
-                            {errors.courseFee && <span className="text-danger">This field is required</span>}
+                            <input type="text" placeholder="Admin Title" {...register("adminTitle", { required: true })} className="form-control"/>
+                            {errors.adminTitle && <span className="text-danger">This field is required</span>}
                             <br/>
-                            <input type="file" placeholder="Course Photo" onChange={handleImageUpload}/>
+                            <input type="file" placeholder="Admin Photo" onChange={handleImageUpload}/>
 
                         </div>
                         
                         <div className="form-group text-right">
-                        <button onClick = {handleSaveProduct} type="submit" className="btn-brand-white mt-3 ml-3">Add Class</button>
+                        <button  type="submit" className="btn-brand-white mt-3 ml-3">Add Class</button>
                         </div>
                         </div>
                     </form>
@@ -90,4 +95,4 @@ const AddClasses = () => {
     );
 };
 
-export default AddClasses;
+export default MakeAdmin;

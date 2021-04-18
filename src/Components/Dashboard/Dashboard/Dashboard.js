@@ -7,6 +7,7 @@ const Dashboard = () => {
         <div>
             <NavbarLogin></NavbarLogin>
             <Sidebar></Sidebar>
+            <h1 style={{color:"tomato"}} className="text-center mt-5"> Admin Dashboard</h1>
         </div>
     );
 };

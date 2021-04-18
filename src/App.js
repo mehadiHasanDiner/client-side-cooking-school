@@ -14,6 +14,11 @@ import AddClasses from './Components/Dashboard/AddClasses/AddClasses';
 import UserDashboard from './Components/UserDashboard/UserDashboard/UserDashboard';
 import PaymentForm from './Components/UserDashboard/ProcessPayment/PaymentForm';
 import UserReview from './Components/UserDashboard/UserReview/UserReview';
+import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
+import ListOfClasses from './Components/Dashboard/ListOfClasses/ListOfClasses';
+import ManageClasses from './Components/Dashboard/ManageClasses/ManageClasses';
+import Apply from './Components/Apply/Apply';
+import Applicant from './Components/Dashboard/Applicant/Applicant';
 
 export const UserContext = createContext();
 
@@ -47,6 +52,21 @@ function App() {
           <PrivateRoute path="/admin/addClasses">
             <AddClasses></AddClasses>
           </PrivateRoute>
+          <PrivateRoute path="/admin/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/listOfClasses">
+            <ListOfClasses></ListOfClasses>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/manageClasses">
+            <ManageClasses></ManageClasses>
+          </PrivateRoute>
+          <PrivateRoute path="/admin/sendApply">
+            <Applicant></Applicant>
+          </PrivateRoute>
+          <Route exact path="/sendApply">
+            <Apply></Apply>
+          </Route>
           <Route exact path="/">
             <Home></Home>
           </Route>
