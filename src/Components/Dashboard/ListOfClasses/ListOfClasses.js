@@ -15,8 +15,7 @@ const ListOfClasses = () => {
     return (
         <div>
             <NavbarLogin></NavbarLogin>
-            <div className="contai
-            ner-fluid row " >
+            <div className="container-fluid row " >
                 <Sidebar></Sidebar>
                 <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "rgb(255 252 231)" }}>
                     <h5 className="text-brand">List of All Cooking Classes</h5>
